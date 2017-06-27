@@ -32,19 +32,7 @@ namespace ConsoleTest
             Uncle Hari = new Uncle("Hari");
             Me Shyam = new Me("Shyam");
 
-            //Console.WriteLine("Gran Father Details :");
-            //Console.WriteLine(surya.FirstName);
-            //Console.WriteLine(surya.LastName);
-
-            //Console.WriteLine("Father's Detail :");
-            //Console.WriteLine(Chandra.FirstName + " " + Chandra.MiddleName + " " + Chandra.LastName);
-
-            //Console.WriteLine("Uncle's Detail :");
-            //Console.WriteLine(Hari.FirstName + " " + Hari.LastName);
-
-            //Console.WriteLine("My Details : ");
-            //Console.WriteLine(Shyam.FirstName + " " + Shyam.MiddleName + " " + Shyam.LastName);
-
+           
 
             Console.WriteLine(surya.ToString());
             Console.WriteLine(Chandra.ToString());
