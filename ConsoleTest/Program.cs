@@ -14,17 +14,17 @@ namespace ConsoleTest
     {
         static void Main(string[] args)
         {
-			////Testmessage();
+			//Testmessage();
 
-            ////Queue();
+            //Queue();
 
-            ////Stack();
+            //Stack();
 			
-            ////Testmessage();
+            //Testmessage();
 
-            ////Queue();
+            //Queue();
 
-            ////Stack();
+            //Stack();
 
             //StackV2();
 
