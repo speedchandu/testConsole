@@ -1,0 +1,140 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index-Html BeginForm</h2>
+<div class="col-lg-6">
+    <div class="row">
+        @using (Html.BeginForm("MovieTypeEntry", "Admin", FormMethod.Post))
+    {
+            <span>
+                <input type="text" name="movieType" value="" placeholder="Movie Type" />
+                <button type="submit" class="glyphicon glyphicon-pencil"></button>
+            </span>
+    }
+    </div>
+
+    <div class="row">
+        @using (Html.BeginForm("CategoryEntry", "Admin", FormMethod.Post))
+    {
+            <span>
+                <input type="text" name="Category" value="" placeholder="Category" />
+                <button type="submit" class="glyphicon glyphicon-pencil"></button>
+            </span>
+    }
+    </div>
+
+    <div>Index - Ajax call</div>
+    <div class="row">
+        <span>
+            <input type="text" name="movieType" id="movieType" value="" placeholder="Movie Type" />
+            <button type="submit" onclick="SendMovieRequest()" class="glyphicon glyphicon-pencil" id="btnMovieSubmit"></button>
+            <i class="alert hidden" id="MovieInfo"></i>
+        </span>
+    </div>
+
+    <div class="row">
+        <span>
+            <input type="text" name="Category" value="" placeholder="Category" id="CategoryAjax" />
+            <button type="submit" class="glyphicon glyphicon-pencil" onclick="SendCategoryRequest()" id="btnCategorySubmit"></button>
+            <i class="alert alert-info hidden" id="CategoryInfo"></i>
+        </span>
+    </div>
+</div>
+
+<div id="MovieForm" class="col-lg-6">
+    @Html.Action("MovieEntryForm","Admin")
+</div>
+<script>
+    //js and jquery code here
+    function SendMovieRequest() {
+        ShowLoader()
+        $.ajax({
+            url: '@Url.Action("MovieTypeEntryAjax","Admin")',
+            type: 'POST',
+            data: { 'movieType': $("#movieType").val() },
+            success: function myfunction(data) {
+                $("#MovieInfo").html(data);
+                console.log(data);
+                if (data=="Success") {
+                    $("#movieType").val("");
+                }
+                $("#MovieInfo").removeClass("hidden");
+                $("#MovieInfo").addClass("alert-info");
+                MovieEntryFormRefresh();
+            },
+            error: function myfunction(err) {
+                $("#MovieInfo").html(err);
+                console.log(err);
+                $("#MovieInfo").removeClass("hidden");
+                $("#MovieInfo").addClass("alert-danger");
+
+            }
+        });
+        HideLoader()
+    }
+    function SendCategoryRequest() {
+        ShowLoader();
+        $.ajax({
+            url: '@Url.Action("CategoryEntryAjax", "Admin")',
+            type: 'POST',
+            data: { 'category': $("#CategoryAjax").val() },
+            success: function myfunction(data) {
+                $("#CategoryInfo").html(data);
+                console.log(data);
+                if (data == "Success") {
+                    $("#CategoryAjax").val("");
+                }
+                $("#CategoryInfo").removeClass("hidden");
+                $("#CategoryInfo").addClass("alert-info");
+                MovieEntryFormRefresh();
+            },
+            error: function myfunction(err) {
+                $("#CategoryInfo").html(err);
+                console.log(err);
+                $("#CategoryInfo").removeClass("hidden");
+                $("#CategoryInfo").addClass("alert-danger");
+
+            }
+        });
+        HideLoader();
+    }
+
+    function MovieEntryFormRefresh() {
+        ShowLoader()
+
+        $.ajax({
+            url: '@Url.Action("MovieEntryForm", "Admin")',
+            type: 'POST',
+            
+            success: function myfunction(data) {
+                $("#MovieForm").html(data);
+            },
+            error: function myfunction(err) {
+            
+            }
+        });
+
+        HideLoader()
+    }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

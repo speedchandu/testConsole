@@ -1,0 +1,43 @@
+﻿
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="row">
+    <h2>Create</h2>
+</div>
+@using (Html.BeginForm("CreateItem", "Test", FormMethod.Get))
+{
+<div class="row">
+    <div class="row">
+        <div class="col-lg-3">First Name</div>
+        <div class="col-lg-6">
+            <input type="text" name="Fname" />
+        </div>
+        <div class="col-lg-3"></div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-3">Last Name</div>
+        <div class="col-lg-6">
+            <input type="text" name="Lname" />
+        </div>
+        <div class="col-lg-3"></div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-3">Email</div>
+        <div class="col-lg-6">
+            <input type="text" name="Email" />
+        </div>
+        <div class="col-lg-3"></div>
+    </div>
+
+    <div class="row">
+        <button type="submit" class="btn btn-success">Submit</button>
+    </div>
+
+
+</div>
+
+}
