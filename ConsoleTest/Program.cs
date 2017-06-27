@@ -14,33 +14,7 @@ namespace ConsoleTest
     {
         static void Main(string[] args)
         {
-			//Testmessage();
-
-            //Queue();
-
-            //Stack();
 			
-            //Testmessage();
-
-            //Queue();
-
-            //Stack();
-
-            //StackV2();
-
-            //StackV3();
-
-            //QueueV2(); 
-
-            //QueueV3();
-
-            //Inheritence();
-
-            //Student();
-
-            //AbstractExample();
-
-            ////Interface();
 
             CustomException();
 
