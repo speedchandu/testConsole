@@ -39,6 +39,8 @@ namespace ConsoleTest
             CustomException();
 
             Console.ReadLine();
+			
+			Console.ReadLine();
         }
 
         static void Inheritence()
