@@ -40,7 +40,7 @@ namespace ConsoleTest
 
             //AbstractExample();
 
-            //Interface();
+            ////Interface();
 
             CustomException();
 
