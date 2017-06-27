@@ -41,6 +41,8 @@ namespace ConsoleTest
             Console.ReadLine();
 			
 			Console.ReadLine();
+			
+			Console.ReadLine();
         }
 
         static void Inheritence()
